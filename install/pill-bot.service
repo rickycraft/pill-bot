@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram pill bot service
+After=network.target
+StartLimitBurst=5
+
+[Service]
+Type=simple
+WorkingDirectory=/root/telegram_pill_bot
+ExecStart=/root/telegram_pill_bot/env/bin/python3 server.py
+Restart=on-failure
+StandardOutput=file:/tmp/pill-bot.log
+StandardError=file:/tmp/pill-bot.log
+
+[Install]
+WantedBy=multi-user.target

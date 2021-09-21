@@ -1,3 +1,9 @@
+# Project specific
+bot_token
+db.json
+env
+.vscode
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
