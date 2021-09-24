@@ -18,7 +18,7 @@ if [ -z "$TOKEN" ]; then
 fi
 echo $TOKEN >../bot_token
 
-echo "{}" >../db.json
+echo '{"_default": {"1": {"id": "box","date": "2021-01-01"}}}' >../db.json
 
 echo "install service"
 cp pill-bot.service /etc/systemd/system

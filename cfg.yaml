@@ -1,0 +1,36 @@
+---
+bot:
+    token_file: "bot_token"
+    weeks: 4
+    start_time: 21
+    end_time: 6
+    admin_keyboard:
+        - ["pill"]
+        - ["box"]
+        - ["/echo", "/stats"]
+    user_keyboard:
+        - ["pill"]
+        - ["box"]
+    timezone: "Europe/Rome"
+    admin: 0
+    user: 0
+    reminder_delta: 20
+messages:
+    reminders:
+        - "Remind 1"
+        - "Remind 2"
+    confirms:
+        - "Confirm 1"
+        - "Confirm 2"
+    admin_confirm: "Took ✔"
+    admin_reminder: "Pill 💊"
+    not_authorized: "Not authorized"
+    user_already_confirmed: "Already confirm"
+    early: "Is early"
+    reminder_success: "You have set a reminder at "
+    reminder_fail: "Failed to set reminder"
+    reminder_tomorrow: "You have set a reminder tomorrow at "
+    removed_reminder: "You have removed %s reminder"
+    next_reminder: "Remind at "
+    no_reminder: "There are no reminders"
+    command_not_supported: "Command not supported"
