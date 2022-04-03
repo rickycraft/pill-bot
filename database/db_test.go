@@ -11,7 +11,7 @@ func TestInsertPillToday(t *testing.T) {
 	db := Init()
 	defer db.Close()
 
-	err := InsertPillToday(db)
+	err := Take(db)
 	assert.Nil(t, err)
 }
 

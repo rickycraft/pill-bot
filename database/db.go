@@ -54,7 +54,7 @@ func insertPillDay(db *sql.DB, dt time.Time) error {
 	return err
 }
 
-func InsertPillToday(db *sql.DB) error {
+func Take(db *sql.DB) error {
 	dt := time.Now().Truncate(time.Second)
 	return insertPillDay(db, dt)
 }
@@ -97,21 +97,3 @@ func GetLastBox(db *sql.DB) []PillDay {
 	}
 	return pillDays
 }
-
-// func GetLastMonth(db *sql.DB) []PillDay {
-// 	days := make([]PillDay, 0, 30)
-// 	rows, err := db.Query("SELECT * FROM PillDay ORDER BY Date DESC LIMIT 30")
-// 	if err != nil {
-// 		return days
-// 	}
-// 	defer rows.Close()
-// 	var pillDay pillDayDto
-// 	for rows.Next() {
-// 		err := rows.Scan(&pillDay.Id, &pillDay.Date, &pillDay.IsFirstDay)
-// 		if err != nil {
-// 			continue
-// 		}
-// 		days = append(days, *pillDay.Model())
-// 	}
-// 	return days
-// }

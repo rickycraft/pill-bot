@@ -23,6 +23,16 @@ func GetCurrentDay() time.Time {
 	return getCurrentDay(time.Now())
 }
 
+func CanTake(db *sql.DB) bool {
+	lastPill := GetLastPill(db)
+	if lastPill == nil {
+		return false
+	}
+	diff := AbsDiffDays(lastPill.Date, GetCurrentDay())
+	// TODO add check for time
+	return diff == 0
+}
+
 func getCurrentDay(dt time.Time) time.Time {
 	if dt.Hour() >= firstHour {
 		return dt
